@@ -17,3 +17,4 @@ Create application simulates a virtual store to display products
 
 # Links
 - [Netlify](https://stalwart-pika-161fc2.netlify.app)
+- [PR2](https://github.com/WalidAlrefai/virtualstore/pull/2)
