@@ -13,7 +13,7 @@ const Products = (props) => {
             {props.products.map((product, i) => {
                 if (props.activeCategory.name === product.category) {
                     console.log(product.category);
-                    return (<Card sx={{ maxWidth: 345 }}>
+                    return (<Card key={i} sx={{ maxWidth: 345 }}>
                         <CardMedia
                             component="img"
                             height="140"
@@ -26,6 +26,9 @@ const Products = (props) => {
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
                                 {product.description}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Price : {product.price}$
                             </Typography>
                         </CardContent>
                         {/* <CardActions>

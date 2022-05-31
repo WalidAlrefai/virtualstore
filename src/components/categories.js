@@ -20,7 +20,9 @@ const Categories = (props) => {
     return (
         <div>
             <div>
-
+                <h2>
+                    Browse our Categories
+                </h2>
                 <Box
                     sx={{
                         display: 'flex',
@@ -39,11 +41,14 @@ const Categories = (props) => {
                             )
                         })}
                     </ButtonGroup>
+
                 </Box>
-                <h2>
-                    Browse our Categories
-                </h2>
-                <h1>{props.activeCategory?.description}</h1>
+
+                <div style={{ textAlign: "center" }}>
+                    <h1>{props.activeCategory?.name}</h1>
+                    <h2>{props.activeCategory?.description}</h2>
+                </div>
+
             </div>
         </div>
 
