@@ -1,7 +1,7 @@
 let initialState = {
     categories: [
-        { name: 'food', id: 0 , description: 'Food' },
-        { name: 'electronics', id: 1 , description: 'Electronics' },
+        { name: 'FOOD', id: 0 , description: 'STUFF FOR YOU TO EAT' },
+        { name: 'ELECTRONICS', id: 1 , description: 'MAKING YOUR LIFE EASIER WITH NEW TECNOLOGY' },
     ],
     activeCategory:{},
 }
