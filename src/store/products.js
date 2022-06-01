@@ -84,7 +84,7 @@ let initialState = {
             url: 'https://www.fotomecanica.mx/pub/media/catalog/product/cache/243b585d5b053344651ac1ff3b7a4649/c/a/canon_2727c002_eos_rebel_t7_dslr_1461734.jpg',
             description: 'For take images or recoard videos',
             price: 60.00,
-            InStock: 25,
+            InStock: 3,
             selected: false
         },
     ]

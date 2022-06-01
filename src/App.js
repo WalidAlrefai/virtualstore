@@ -3,14 +3,20 @@ import { Routes, Route } from "react-router-dom";
 import Header from './components/header';
 import Store from './components/store';
 import Footer from './components/footer';
+import SimpleCart from './components/chart/simpleCart';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <div className="simpleCart">
+        <SimpleCart />
+      </div>
+      <div className="content">
       <Routes>
         <Route path="/" element={<Store />} />
       </Routes>
+      </div>
       <Footer />
     </div>
   );
