@@ -1,3 +1,15 @@
-.link{
-    text-decoration:none;
+.header{
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    .header-left{
+        display: flex;
+    }
+    .header-right{
+        margin: 0 20px 0 0;
+    }
+    
+    .link{
+        text-decoration:none;
+    }
 }
