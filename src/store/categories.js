@@ -1,7 +1,7 @@
 let initialState = {
     categories: [
-        { name: 'FOOD', id: 0 , description: 'STUFF FOR YOU TO EAT' },
-        { name: 'ELECTRONICS', id: 1 , description: 'MAKING YOUR LIFE EASIER WITH NEW TECNOLOGY' },
+        // { name: 'FOOD', id: 0 , description: 'STUFF FOR YOU TO EAT' },
+        // { name: 'ELECTRONICS', id: 1 , description: 'MAKING YOUR LIFE EASIER WITH NEW TECNOLOGY' },
     ],
     activeCategory:{},
 }
@@ -13,6 +13,9 @@ export default function CategoriesReducer(state = initialState, action) {
         case "SELECT_CATEGORY":
             activeCategory = state.categories.find(category => category.id === payload);
             return { ...state, activeCategory: activeCategory };
+        case "GET_CATEGORY":
+            console.log(payload, 'payload');
+            return {...state, categories: payload, activeCategory: payload[0]};
         default:
             return state;
     }

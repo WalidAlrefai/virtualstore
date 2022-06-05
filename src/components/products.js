@@ -28,9 +28,11 @@ const Products = (props) => {
         <div className="products">
             
             {props.products.map((product, i) => {
-                if (props.activeCategory.name === product.category) {
+                console.log(props.activeCategory,'product');
+                if (props.activeCategory?.name === product.category) {
                     // console.log(product.category);
-                    return (<Card key={i} sx={{ maxWidth: 345 }}>
+                    return (
+                    <Card key={i} sx={{ maxWidth: 345 }}>
                         <CardMedia
                             component="img"
                             height="140"
@@ -58,10 +60,13 @@ const Products = (props) => {
                         </CardActions>
                     </Card>
                     )
+                
                 } else {
                     return null;
                 }
-            })}
+            })
+        }
+            
         </div>
     )
 }
@@ -70,6 +75,7 @@ const mapStateToProps = (state) => {
         products: state.products.products,
         activeCategory: state.categories.activeCategory,
         cart:state.cart,
+        // product:state.product
     }
 };
 const mapDispatchToProps = {
