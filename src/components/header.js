@@ -41,7 +41,7 @@ const Header = (props) => {
                     </div>
                     <div className="header-right" align='right'>
                         <Typography align='right' variant='subtitle1'>
-                            <ShoppingCartIcon />{cart.cartCount}
+                            <Link to='Cart'><ShoppingCartIcon />{cart.cartCount}</Link>
                         </Typography>
                     </div>
                 </Toolbar>

@@ -5,19 +5,21 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/IconButton';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import {addCart  , decrementStock} from '../store/cart.js';
+import {addCart } from '../store/cart.js';
+import {decrementStock} from '../store/products.js';
 // import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import './products.scss';
 
 const Products = (props) => {
-    const{addCart} = props;
+    const{addCart,decrementStock} = props;
     function addCartI(product,id){
-        console.log(product,id,'product');
+        // console.log(product,'product');
         if(product?.InStock > 0){
-            decrementStock(product)
+            
             addCart({...product,cartId:id});
+            decrementStock(product)
         }else{
             alert('Out of Stock');
         }
@@ -45,6 +47,9 @@ const Products = (props) => {
                             <Typography variant="body2" color="text.secondary">
                                 Price : {product.price}$
                             </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                InStock : {product.InStock}
+                            </Typography>
                         </CardContent>
                         <CardActions>
                             <IconButton color="primary" aria-label="add to shopping cart">
@@ -69,5 +74,6 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = {
     addCart,
+    decrementStock,
 };
 export default connect(mapStateToProps,mapDispatchToProps)(Products);

@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Header from './components/header';
 import Store from './components/store';
 import Footer from './components/footer';
-import SimpleCart from './components/chart/simpleCart';
+import SimpleCart from './components/cart/simpleCart';
+import Cart from './components/cart/cart';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div className="content">
       <Routes>
         <Route path="/" element={<Store />} />
+        <Route path="/Cart" element={<Cart/>} />
       </Routes>
       </div>
       <Footer />

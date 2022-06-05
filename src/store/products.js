@@ -104,6 +104,32 @@ export default function ProductsReducer(state = initialState, action) {
                 return product;
             });
             return { products: products };
+        case "DECREMENT_STOCK":
+            let decrementArr = [...state.products];
+            console.log(payload, 'array');
+            let decrementItem = payload;
+            let array = decrementArr.map((item, index) => {
+                if (item.name === decrementItem.name) {
+                    item.InStock = item.InStock - 1;
+                    return item;
+                }
+                return item;
+            })
+            console.log(array, 'array');
+            return { products: array };
+        case "INCREMENT_STOCK":
+            let incrementArr = [...state.products];
+            // console.log(payload, 'array');
+            let incrementItem = payload;
+            let array1 = incrementArr.map((item, index) => {
+                if (item.name === incrementItem.name) {
+                    item.InStock = item.InStock + 1;
+                    return item;
+                }
+                return item;
+            })
+            console.log(array1, 'array');
+            return { products: array1 };
         default:
             return state;
     }
@@ -113,5 +139,17 @@ export const selectCategory = (category) => {
     return {
         type: "SELECT_CATEGORY",
         payload: category
+    }
+}
+export const decrementStock = (item) => {
+    return {
+        type: 'DECREMENT_STOCK',
+        payload: item
+    }
+}
+export const incrementStock = (item) => {
+    return {
+        type: 'INCREMENT_STOCK',
+        payload: item
     }
 }
