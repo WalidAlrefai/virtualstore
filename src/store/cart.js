@@ -20,6 +20,7 @@ export default function CartReducer(state = initialState, action) {
                     return;
                 }
             })
+            
             return {cartCount: state.cartCount - 1, cart: removeArr}
         default:
             return state;

@@ -4,19 +4,21 @@ import Box from '@mui/material/Box';
 import { connect } from 'react-redux';
 import { selectCategory } from '../store/categories.js';
 import { useState, useEffect } from 'react';
-
+import {getCatagories} from '../store/action';
 const Categories = (props) => {
-    const [activeCategory, setActiveCategory] = useState(props.categories[0].id);
-    const { selectCategory } = props;
+    const [activeCategory, setActiveCategory] = useState(props.categories[0]?.id);
+    const { selectCategory,getCatagories } = props;
     function handleClick(category) {
         setActiveCategory(category);
         props.selectCategory(category);
-        console.log(props.categories);
+        // console.log(props.categories);
     }
     useEffect(() => {
+        getCatagories(1);
+    },[getCatagories])
+    useEffect(() => {
         selectCategory(activeCategory);
-
-    }, [activeCategory, selectCategory]);
+    }, [activeCategory, props, selectCategory]);
     return (
         <div>
             <div>
@@ -63,7 +65,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-    selectCategory
+    selectCategory,
+    getCatagories
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);
