@@ -6,9 +6,14 @@ import Grid from '@mui/material/Grid';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { connect } from 'react-redux';
 import {removeCart} from '../../store/cart.js';
+import {incrementStock} from '../../store/products.js';
 
 const SimpleCart = (props) => {
-    const {removeCart,cart} = props;
+    const {removeCart,cart,incrementStock} = props;
+    function removeCartI(product,id){
+        removeCart(product);
+        incrementStock(product)
+    }
     return (
         <div className="simpleCart">
             <Grid item xs={12} md={6}>
@@ -19,7 +24,7 @@ const SimpleCart = (props) => {
                                 <ListItem>
                                     <ListItemText primary={item.name}  />
                                     {/* secondary={item.price} */}
-                                    <IconButton onClick={()=>{removeCart(item)}}>
+                                    <IconButton onClick={()=>{removeCartI(item)}}>
                                         <DeleteIcon />
                                     </IconButton>
                                 </ListItem>
@@ -38,5 +43,6 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = {
     removeCart,
+    incrementStock,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SimpleCart);
