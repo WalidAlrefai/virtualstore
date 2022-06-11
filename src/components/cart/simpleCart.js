@@ -5,8 +5,8 @@ import IconButton from '@mui/material/IconButton';
 import Grid from '@mui/material/Grid';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { connect } from 'react-redux';
-import {removeCart} from '../../store/cart.js';
-import {incrementStock} from '../../store/products.js';
+import {removeCart} from '../../store-toolkit/cart';
+import {incrementStock} from '../../store-toolkit/product';
 
 const SimpleCart = (props) => {
     const {removeCart,cart,incrementStock} = props;

@@ -6,6 +6,7 @@ import Store from './components/store';
 import Footer from './components/footer';
 import SimpleCart from './components/cart/simpleCart';
 import Cart from './components/cart/cart';
+import Details from './components/details/details';
 import {useEffect} from 'react'
 import {getCatagories} from './store/action'
 
@@ -26,6 +27,7 @@ function App(props) {
       <Routes>
         <Route path="/" element={<Store />} />
         <Route path="/Cart" element={<Cart/>} />
+        <Route path="/Details/:id" element={<Details/>} />
       </Routes>
       </div>
       <Footer />
