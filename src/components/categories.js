@@ -2,9 +2,9 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
 import { connect } from 'react-redux';
-import { selectCategory } from '../store/categories.js';
+import { selectCategory,getCatagories } from '../store-toolkit/category';
 import { useState, useEffect } from 'react';
-import {getCatagories} from '../store/action';
+// import {getCatagories} from '../store-toolkit/category';
 const Categories = (props) => {
     const [activeCategory, setActiveCategory] = useState(props.categories[0]?.id);
     const { selectCategory,getCatagories } = props;
